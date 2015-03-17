@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>LearnHowClone</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>LearnHowClone</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <h1>Learn how to Clone</h1>
+    <header class="jumbotron">
+      <h1 class="container">Learn how to Clone</h1>
+    </header>
 
-  <%= flash[:notice] %>
+    <section style="display: none;">
+      <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+      <div class="alert alert-danger" role="alert"><%= flash[:alert] %></div>
+    </section>
 
-  <%= yield %>
+    <main class="container">
+      <%= yield %>
+    </main>
 
-</body>
+    <footer></footer>
+
+  </body>
 </html>

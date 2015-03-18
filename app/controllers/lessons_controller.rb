@@ -5,6 +5,13 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    if (@lesson.next == @lesson)
+      flash[:alert] = "END OF LINE."
+    # elsif (@lesson.previous == @lesson)
+    #   flash[:alert] = "BEGINNING OF LINE."
+    else
+      @lesson
+    end
   end
 
   def new
